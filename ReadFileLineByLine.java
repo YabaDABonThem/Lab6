@@ -9,7 +9,7 @@ import java.io.*;         // Import Java I/O classes
 // Define a new class
 public class ReadFileLineByLine { 
 
-    // the main method
+    // The main method
     public static void main (String[] args) throws IOException{ 
 	
    	// Variable that holds the name of the file we are reading
