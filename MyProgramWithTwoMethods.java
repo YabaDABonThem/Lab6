@@ -5,7 +5,7 @@
 // import statements
 import java.util.Scanner;
 
-public class MyProgramWithThreeMethods {
+public class MyProgramWithTwoMethods {
     
     // a method that prints what the program does
     public static void printInstructions() {
@@ -19,19 +19,6 @@ public class MyProgramWithThreeMethods {
         int keyboardInput = keyboard.nextInt();
         return keyboardInput;
     }
-    
-    // a method that takes two arguments, and calculates the first input 
-    // argument raised to the power of the second argument 
-    public static int calcExponentValue(int integerValue, int exponentValue){ 
-        
-        int integerPower = integerValue; 
-        
-        for (int i = 2; i <= exponentValue; i++){ 
-        integerPower *= integerValue; 
-        } 
-        
-        return integerPower; 
-    } 
 
     // the main routine
     public static void main(String[] args) {
@@ -39,13 +26,21 @@ public class MyProgramWithThreeMethods {
         // print instructions and get user's input
         printInstructions();
         
+        Scanner keyboard = new Scanner(System.in);
+        
         System.out.print("Please input your base; an integer less than 10 : ");
         int myInteger = getIntegerFromKeyboard();
         
-        System.out.print("Please input your exponent; a positive integer less than 10: ");
-        int myExponent =  getIntegerFromKeyboard();
+        System.out.print("Please input your exponent; a positive integer less than 10 : ");
+        int myExponent = getIntegerFromKeyboard();
+        int myIntegerPower = myInteger;
+
+        // perform calculation
+        for (int i = 2; i <= myExponent; ++i) {
+            myIntegerPower *= myInteger;
+        }
 
         // output result
-        System.out.println("The integer " + myInteger + " raised to the " + myExponent + "th power: " + calcExponentValue(myInteger, myExponent));
+        System.out.println("The integer " + myInteger + " raised to the " + myExponent + "th power: " + myIntegerPower);
     }
 }
